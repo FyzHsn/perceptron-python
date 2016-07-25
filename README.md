@@ -11,4 +11,8 @@ However, Raschka outlines a plotting code to visualize the descision boundary fo
 
 ![](https://github.com/FyzHsn/perceptron-python/blob/master/Separability_Boundary.png?raw=true)
 
+Also, the number of misclassifications made per epoch is give by:
+
+![](https://github.com/FyzHsn/perceptron-python/blob/master/Misclassifications.png?raw=true)
+
 Lastly, html file of the Rmd file published on my rpubs account is [here](https://rpubs.com/FaiHas/197581).
