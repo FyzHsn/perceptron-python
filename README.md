@@ -9,4 +9,6 @@ I have played around with the data some more in the Rmd file beyond the python s
 
 However, Raschka outlines a plotting code to visualize the descision boundary for the 2D data set. This is very useful and would be nice to implement in R.
 
+![](https://github.com/FyzHsn/perceptron-python/blob/master/Separability_Boundary.png?raw=true)
+
 Lastly, html file of the Rmd file published on my rpubs account is [here](https://rpubs.com/FaiHas/197581).
