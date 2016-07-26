@@ -11,8 +11,23 @@ However, Raschka outlines a plotting code to visualize the descision boundary fo
 
 ![](https://github.com/FyzHsn/perceptron-python/blob/master/Separability_Boundary.png?raw=true)
 
-Also, the number of misclassifications made per epoch is give by:
+Also, the number of misclassifications made per epoch is given by:
 
 ![](https://github.com/FyzHsn/perceptron-python/blob/master/Misclassifications.png?raw=true)
 
+If we look at the parameters for all three species, the separability plot becomes:
+
+![](https://github.com/FyzHsn/perceptron-python/blob/master/Separability_Boundary_II.png?raw=true)
+
+When we try to separate between Setosa and Non-setosa, we get the following misclassification plot:
+
+![](https://github.com/FyzHsn/perceptron-python/blob/master/Misclassifications_Setosa.png?raw=true)
+
+Not only is it separable, it converges earlier as well. Of course more data points are used per epoch.
+
+When, we try to separate virginica from non-virginica, we find that the errors do not go down to zero and hence, the weight does not converge:
+
+![](https://github.com/FyzHsn/perceptron-python/blob/master/Misclassifications_Virginica.png?raw=true)
+
 Lastly, html file of the Rmd file published on my rpubs account is [here](https://rpubs.com/FaiHas/197581).
+
