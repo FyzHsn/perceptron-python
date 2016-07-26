@@ -51,7 +51,8 @@ plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_,
          marker='o')
 plt.xlabel('Epochs')
 plt.ylabel('Number of misclassifications')
-plt.savefig('Misclassifications.png')   
+plt.savefig('Misclassifications.png') 
+plt.clf()  
 
 
 """ 
@@ -89,12 +90,65 @@ plot_decision_regions(X, y, classifier=ppn)
 plt.xlabel('sepal length [cm]')
 plt.ylabel('petal length [cm]')
 plt.legend(loc='upper left')
-plt.savefig('Separability_Boundary.png')                    
+plt.savefig('Separability_Boundary.png')                
+plt.clf()    
 
+"""
+I carry out some more exploratory data analysis, by keeping all the 
+species of the iris data set.
 
+"""
+y = df.iloc[:, 4].values
+X = df.iloc[:, [0, 2]].values
 
+"""
+Rows 0 - 50 (Iris-setosa), 50 - 100 (Iris-versicolor), 100 - 150
+(Iris-virginica)
 
+"""
 
+# Scatter plot
+plt.scatter(X[0:50, 0], X[0:50, 1], 
+            color='red', marker='o', label='setosa')
+plt.scatter(X[50:100, 0], X[50:100, 1],
+            color='blue', marker='x', label='versicolor')
+plt.scatter(X[100:151, 0], X[100:151, 1],
+            color='cyan', marker='^', label='versicolor')       
+plt.xlabel('sepal length')
+plt.ylabel('petal length')
+plt.legend(loc='upper left')
+plt.savefig('Separability_Boundary_II.png')
+plt.clf()
 
+# Run the perceptron data to differentiate between setosa and others.            
+y = np.where(y == 'Iris-setosa', -1, 1)
+
+ppn = Perceptron(eta=0.1, n_iter=10)
+ppn.fit(X, y)
+plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_,
+         marker='o')
+plt.xlabel('Epochs')
+plt.ylabel('Number of misclassifications')
+plt.title('Setosa vs Non-setosa')
+plt.savefig('Misclassifications_Setosa.png')
+plt.clf()
+
+""" 
+Meanwhile we cannot distinguish virginica from the others due to the
+lack of linear separability.
+
+"""
+y = df.iloc[:, 4].values
+y = np.where(y == 'Iris-virginica', -1, 1)
+
+ppn = Perceptron(eta=0.1, n_iter=10)
+ppn.fit(X, y)
+plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_,
+         marker='o')
+plt.xlabel('Epochs')
+plt.ylabel('Number of misclassifications')
+plt.title('Virginica vs Non-virginica')
+plt.savefig('Misclassifications_Virginica.png')
+plt.clf()
 
 
