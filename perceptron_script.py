@@ -151,4 +151,22 @@ plt.title('Virginica vs Non-virginica')
 plt.savefig('Misclassifications_Virginica.png')
 plt.clf()
 
+"""
+Look at the update of weights when they don't converge as in the 
+previous case.
+
+"""
+from numpy import linalg as LA
+for ii in range(1, 20):
+    ppn = Perceptron(eta=0.1, n_iter=ii)
+    ppn.fit(X, y)
+    print(LA.norm(ppn.w_))
+
+
+
+
+
+
+
+
 
