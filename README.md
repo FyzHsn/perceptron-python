@@ -1,6 +1,12 @@
 perceptron-python
 =================
 
+**Intuition and mathematical sketch behind algorithm:**
+
+**Karamkars algorithms and simplex method, polynomial computation time.**
+
+**Fontanari and Meir's genetic algorithm that figured out these rules.**
+
 This repository contains notes on the perceptron machine learning algorithm. The python scripts are from the book Python Machine Learning by Sebastian Raschka. Meanwhile, the R script is my implementation in the program R.
 
 Furthermore, the algorithm is then applied to the iris data set of flower species and their dependence on petal and sepal dimensions.
