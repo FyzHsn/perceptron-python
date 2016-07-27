@@ -1,12 +1,26 @@
 perceptron-python
 =================
 
-**Intuition and mathematical sketch behind algorithm:**
-Define extended input vector (characterizing the object) and the extended weight vectors as  
-\begin{multline}
-\vec{x} & = & (x_1, x_2, ..., x_n, 1) \\
-\vec{w} & = & (w_1, w_2, ..., w_n, w_{n+1}).
-\end{multline}
+## **Intuition and mathematical sketch behind algorithm:**
+
+### Definitions:  
+
+1.  Define input and weight vectors. Following that define extended input and weight vectors.  
+2.  Define open (closed) positive and negative half-spaces such that the net input, i.e. dot product of the weight and input vectors are > (>=) or < (<=) 0, respectively.  
+3.  Define linear separability of the input data points with binary classification as belonging to sets A and B respectively. Also, at this point it can be proven that linear separability leads to absolute linear separability for finite sets. 
+
+
+### Describe the algorithm:
+
+*start:* The initial weight vector is randomly generated at t:=0.
+
+*test:* A vector from the union of the negative and the positive half space is chosen randomly.  
+        if classified correctly, go back to *test*,  
+        if classified incorrectly, go to *update*.  
+        
+*update:*  Add/subtract the misclassified positive/negative point to the weight vector and update t:=t+1, go to *test*.  
+
+### Sketch of convergence proof:
 
 **Karamkars algorithms and simplex method leads to polynomial computation time.**
 
