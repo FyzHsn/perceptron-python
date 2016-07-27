@@ -2,7 +2,7 @@ perceptron-python
 =================
 
 **Intuition and mathematical sketch behind algorithm:**
-Define extended input vector (characterizing the object) and the extended weight vectors as
+Define extended input vector (characterizing the object) and the extended weight vectors as  
 \begin{multline}
 \vec{x} & = & (x_1, x_2, ..., x_n, 1) \\
 \vec{w} & = & (w_1, w_2, ..., w_n, w_{n+1}).
