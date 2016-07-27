@@ -20,7 +20,16 @@ perceptron-python
         
 *update:*  Add/subtract the misclassified positive/negative point to the weight vector and update t:=t+1, go to *test*.  
 
-### Sketch of convergence proof:
+### Sketch of convergence proof:  
+
+1. Intuition: The normal to the line separating the two data sets in the positive half space is the ideal weight vector: w*.  
+2. Make simplifying assumptions: The weight (w*) and the positive input vectors can be normalized WLOG.  
+3. Assume that after t+1 steps, the weight vector (w_t+1) has been computed, meaning that at time t a positive vector p_i was misclassified.  
+4. Look at the cosine of the angle between the ideal weight vector (w*) and w_t+1.  
+5. Defining some delta to be the minimum of the dot products between the weight vector and the positive points, we can come up with a lower bound for the cosine of the angle.  
+6. Following that the argument is that the lower bound grows as sqrt(t) while it is bound above by 1. Hence, the weights have to stop updating, i.e. converges, after a finite amount of changes.  
+
+Of course, this algorithm could take a long time to converge for pathological cases and that is where other algorithms come in.  
 
 **Karamkars algorithms and simplex method leads to polynomial computation time.**
 
